@@ -309,6 +309,10 @@ void DuckyPayload::begin(Preferences &prefs)
 {
     preferences = &prefs;
     addDuckyScriptExtensions(extCommands, consts);
+    
+    // Set default keyboard layout to Mexican Spanish (win_es-MX)
+    duckyFileParser.SetKeyboardLayout("win_es-MX");
+    Debug::Log.info(LOG_DUCKY, "Default keyboard layout set to win_es-MX");
 }
 
 void DuckyPayload::loop(Preferences &prefs)

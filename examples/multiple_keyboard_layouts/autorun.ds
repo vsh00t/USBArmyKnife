@@ -1,14 +1,24 @@
-REM If you don't set a KEYBOARD_LAYOUT value then the device will output en-US HID REM You must define your Discord webhook if you want to use this method for the exfiltration
-REM This is the USB standard keyboard layout
-STRING American keyboard layout
+REM If you don't set a KEYBOARD_LAYOUT value then the device will output Mexican Spanish HID (win_es-MX)
+REM This example demonstrates multiple keyboard layouts compiled into the firmware
+REM By default, this firmware has Spanish (Spain) and Spanish (Mexico) layouts enabled
 
-REM To change this you need to use the KEYBOARD_LAYOUT command AND have your layout compiled into the firmware
-REM To compile a new language in:
-REM 1. Edit platformio.ini and uncomment the correct build flag in the keyboardlayouts section. Do not add too many layouts as memory is limited.
-REM 2. Build and flash the firmware to your device.
+REM Default layout - Mexican Spanish (compiled by default)
+KEYBOARD_LAYOUT win_es-MX
+STRING Layout de teclado mexicano - México
 
-KEYBOARD_LAYOUT win_en-GB
-STRING British keyboard layout
+REM Alternative layout - Spanish (Spain)
+REM KEYBOARD_LAYOUT win_es
+REM STRING Layout de teclado español - España
 
-KEYBOARD_LAYOUT win_pt-BR
-STRING Brazilian keyboard layout
+REM To add more layouts:
+REM 1. Edit platformio.ini and uncomment the correct build flag in the keyboardlayouts section
+REM 2. Do not add too many layouts as memory is limited
+REM 3. Build and flash the firmware to your device
+
+REM Testing special characters in Mexican layout
+KEYBOARD_LAYOUT win_es-MX
+STRING Caracteres especiales: ñáéíóúü¿¡@#
+
+REM Switch to Spain layout for comparison
+REM KEYBOARD_LAYOUT win_es
+REM STRING Caracteres españoles: ñáéíóúü¿¡@#

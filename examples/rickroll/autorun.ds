@@ -1,3 +1,7 @@
+REM Set keyboard layout - Mexican Spanish is default, Spanish (Spain) is alternative
+REM KEYBOARD_LAYOUT win_es
+KEYBOARD_LAYOUT win_es-MX
+
 GUI r
 DELAY 1000
 STRING https://www.youtube.com/watch?v=xvFZjo5PgG0

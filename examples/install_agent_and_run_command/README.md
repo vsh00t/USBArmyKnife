@@ -9,13 +9,13 @@ This example shows you how to install the agent and run commands against it. It 
 ## Set up
 1. Build the agent, add to a disk image named agent.img and copy to SD card
 1. Choose which keyboard layout you need.
-   * us-autorun.ds works on machines that use a US keyboard layout
-   * uk-autorun.ds shows an example of using the RAW_HID/KEYBOARD_LAYOUT commands to press the right keys for a UK keyboard layout 
+   * us-autorun.ds works on machines using Mexican Spanish layout (win_es-MX) by default
+   * uk-autorun.ds also uses Mexican Spanish layout (win_es-MX) by default, with commented Spanish (Spain) option
 1. Rename your chosen file to autorun.ds and copy on the SD card
 
 ## Usage
 
-**WARNING The current script is intended to be run on a machine with a UK keyboard layout** You may need to change the script's RAW_HID commands for other keyboard layouts.
+**NOTE: Both scripts now use Mexican Spanish keyboard layout (win_es-MX) by default.** You can uncomment the Spanish (Spain) layout line if needed, or modify the KEYBOARD_LAYOUT command for other layouts.
 
 1. Plug in device
 2. Wait for the device to reset / USB drive to disappear

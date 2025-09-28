@@ -1,5 +1,9 @@
 REM Warning this script may not be supported on all devices!
 
+REM Set keyboard layout - Mexican Spanish is default, Spanish (Spain) is alternative
+REM KEYBOARD_LAYOUT win_es
+KEYBOARD_LAYOUT win_es-MX
+
 REM First we need to change the device settings so when it boots
 REM it isn't a USB device. That way it will wait until the script starts
 REM and we will tell it how to behave

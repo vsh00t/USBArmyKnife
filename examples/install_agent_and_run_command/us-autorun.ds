@@ -1,8 +1,11 @@
 REM To run this, you first need to create a disk image which contains the agent
 REM Follow tools/README.md for instructions
 REM Make sure the disk image is named agent.img you put it on the SD card
+REM This version uses Mexican Spanish keyboard layout (win_es-MX)
+REM KEYBOARD_LAYOUT win_es
 
-LOG UK agent script
+KEYBOARD_LAYOUT win_es-MX
+LOG Mexican Spanish agent script
 
 DEFINE #FILE /agentInstalled
 
