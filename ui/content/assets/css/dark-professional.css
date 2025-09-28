@@ -1,0 +1,321 @@
+/* Dark Professional Theme for LilyGo T-Dongle S3 - Optimized */
+:root {
+  --dark-bg-primary: #0d1117;
+  --dark-bg-secondary: #161b22;
+  --dark-bg-tertiary: #21262d;
+  --dark-border: #30363d;
+  --dark-text-primary: #f0f6fc;
+  --dark-text-secondary: #8b949e;
+  --dark-accent: #238636;
+  --dark-accent-hover: #2ea043;
+  --dark-danger: #da3633;
+  --dark-warning: #fd7e14;
+  --dark-info: #0dcaf0;
+}
+
+/* Force dark theme */
+html[data-bs-theme="light"] {
+  --bs-body-bg: var(--dark-bg-primary);
+  --bs-body-color: var(--dark-text-primary);
+  --bs-border-color: var(--dark-border);
+}
+
+body {
+  background: var(--dark-bg-primary) !important;
+  color: var(--dark-text-primary) !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+/* Header with logo */
+.navbar {
+  background: var(--dark-bg-secondary) !important;
+  border-bottom: 2px solid var(--dark-accent);
+  padding: 0.5rem 1rem !important;
+}
+
+.navbar-brand {
+  display: flex !important;
+  align-items: center !important;
+  color: var(--dark-text-primary) !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+}
+
+.navbar-brand img {
+  height: 32px;
+  margin-right: 8px;
+}
+
+/* Tabs */
+.nav-tabs {
+  background: var(--dark-bg-secondary) !important;
+  border-bottom: 1px solid var(--dark-border) !important;
+}
+
+.nav-tabs .nav-link {
+  color: var(--dark-text-secondary) !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.85rem !important;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--dark-accent) !important;
+  background: var(--dark-bg-tertiary) !important;
+  border-bottom: 2px solid var(--dark-accent) !important;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--dark-text-primary) !important;
+  background: var(--dark-bg-tertiary) !important;
+}
+
+/* Tab content */
+.tab-content {
+  background: var(--dark-bg-primary) !important;
+  padding: 1rem;
+}
+
+/* Status cards */
+.bg-primary {
+  background: linear-gradient(135deg, var(--dark-bg-secondary) 0%, var(--dark-bg-tertiary) 100%) !important;
+  border: 1px solid var(--dark-border) !important;
+}
+
+.text-white {
+  color: var(--dark-text-primary) !important;
+}
+
+.text-white-50 {
+  color: var(--dark-text-secondary) !important;
+}
+
+/* Cards and lists */
+.list-group-item {
+  background: var(--dark-bg-secondary) !important;
+  color: var(--dark-text-primary) !important;
+  border: 1px solid var(--dark-border) !important;
+}
+
+.accordion-item {
+  background: var(--dark-bg-secondary) !important;
+  border: 1px solid var(--dark-border) !important;
+}
+
+.accordion-button {
+  background: var(--dark-bg-tertiary) !important;
+  color: var(--dark-text-primary) !important;
+  border: none !important;
+  font-size: 0.9rem !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: var(--dark-accent) !important;
+  color: white !important;
+}
+
+.accordion-body {
+  background: var(--dark-bg-secondary) !important;
+  color: var(--dark-text-primary) !important;
+}
+
+/* Form controls */
+.form-control, .form-select {
+  background: var(--dark-bg-tertiary) !important;
+  color: var(--dark-text-primary) !important;
+  border: 1px solid var(--dark-border) !important;
+  font-size: 0.85rem !important;
+}
+
+.form-control:focus, .form-select:focus {
+  background: var(--dark-bg-tertiary) !important;
+  color: var(--dark-text-primary) !important;
+  border-color: var(--dark-accent) !important;
+  box-shadow: 0 0 0 0.2rem rgba(35, 134, 54, 0.25) !important;
+}
+
+.form-label {
+  color: var(--dark-text-secondary) !important;
+  font-size: 0.8rem !important;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--dark-accent) !important;
+  border: 1px solid var(--dark-accent) !important;
+  color: white !important;
+  font-size: 0.8rem !important;
+  padding: 0.375rem 0.75rem !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: var(--dark-accent-hover) !important;
+  border-color: var(--dark-accent-hover) !important;
+}
+
+.btn-secondary {
+  background: var(--dark-bg-tertiary) !important;
+  border: 1px solid var(--dark-border) !important;
+  color: var(--dark-text-primary) !important;
+  font-size: 0.8rem !important;
+}
+
+.btn-danger {
+  background: var(--dark-danger) !important;
+  border: 1px solid var(--dark-danger) !important;
+  font-size: 0.8rem !important;
+}
+
+/* Progress bars */
+.progress {
+  background: var(--dark-bg-tertiary) !important;
+  border: 1px solid var(--dark-border) !important;
+  height: 20px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--dark-accent) 0%, var(--dark-accent-hover) 100%) !important;
+  font-size: 0.75rem;
+}
+
+/* Custom switches */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dark-bg-tertiary);
+  border: 1px solid var(--dark-border);
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--dark-text-secondary);
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--dark-accent);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: white;
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Textarea */
+textarea {
+  background: var(--dark-bg-tertiary) !important;
+  color: var(--dark-text-primary) !important;
+  border: 1px solid var(--dark-border) !important;
+  font-family: 'Courier New', monospace !important;
+  font-size: 0.8rem !important;
+}
+
+/* Links */
+a {
+  color: var(--dark-accent) !important;
+}
+
+a:hover {
+  color: var(--dark-accent-hover) !important;
+}
+
+/* Footer */
+footer {
+  background: var(--dark-bg-secondary) !important;
+  border-top: 1px solid var(--dark-border) !important;
+}
+
+/* Status indicators */
+.status-online {
+  color: var(--dark-accent) !important;
+}
+
+.status-offline {
+  color: var(--dark-danger) !important;
+}
+
+.status-warning {
+  color: var(--dark-warning) !important;
+}
+
+/* Responsive optimizations for T-Dongle S3 */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+  
+  .nav-tabs .nav-link {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .row.row-cols-1 .col {
+    padding: 0.5rem !important;
+  }
+  
+  .btn {
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.6rem !important;
+  }
+  
+  .form-control, .form-select {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Container optimizations */
+.container {
+  padding: 0.5rem !important;
+}
+
+.py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+/* Compact spacing */
+.p-3 {
+  padding: 0.75rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem !important;
+}

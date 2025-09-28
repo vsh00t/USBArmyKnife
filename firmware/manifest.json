@@ -1,0 +1,25 @@
+{
+  "name": "USB Army Knife - LILYGO T-Watch S3",
+  "version": "ab7d82d",
+  "home_assistant_domain": "esphome",
+  "new_install_skip_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "bootloader.bin",
+          "offset": "0x0"
+        },
+        {
+          "path": "partitions.bin", 
+          "offset": "0x8000"
+        },
+        {
+          "path": "firmware.bin",
+          "offset": "0x10000"
+        }
+      ]
+    }
+  ]
+}

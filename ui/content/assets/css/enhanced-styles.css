@@ -1,0 +1,364 @@
+/* Enhanced USB Army Knife Styles */
+
+/* Dark Theme Support */
+[data-bs-theme="dark"] {
+    --uk-primary: #e2e8f0;
+    --uk-secondary: #94a3b8;
+    --uk-accent: #60a5fa;
+    --uk-success: #34d399;
+    --uk-warning: #fbbf24;
+    --uk-danger: #f87171;
+    --uk-light: #1e293b;
+    --uk-dark: #f8fafc;
+}
+
+[data-bs-theme="dark"] body {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+[data-bs-theme="dark"] .main-content {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="dark"] .metric-card {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .metric-card:hover {
+    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .accordion-button {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: var(--uk-primary);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .form-select,
+[data-bs-theme="dark"] .form-control {
+    background-color: #334155;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--uk-primary);
+}
+
+[data-bs-theme="dark"] .form-select:focus,
+[data-bs-theme="dark"] .form-control:focus {
+    background-color: #475569;
+    border-color: var(--uk-accent);
+    color: var(--uk-primary);
+}
+
+/* Enhanced Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.metric-card {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.nav-pills .nav-link.active {
+    animation: pulse 2s infinite;
+}
+
+/* Status Badge Improvements */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.status-badge::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+}
+
+.status-success::before {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.status-warning::before {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.status-danger::before {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Progress Bar Enhancements */
+.progress {
+    position: relative;
+    overflow: visible;
+}
+
+.progress-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 33%,
+        rgba(255, 255, 255, 0.1) 33%,
+        rgba(255, 255, 255, 0.1) 66%,
+        transparent 66%
+    );
+    background-size: 30px 30px;
+    animation: move 2s linear infinite;
+}
+
+@keyframes move {
+    0% { transform: translateX(-30px); }
+    100% { transform: translateX(30px); }
+}
+
+/* Button Enhancements */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Tree View Improvements */
+.bstreeview .list-group-item {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.bstreeview .list-group-item:hover {
+    border-left-color: var(--uk-accent);
+    padding-left: 1rem;
+}
+
+/* Custom Scrollbar */
+.bstreeview,
+#logBox {
+    scrollbar-width: thin;
+    scrollbar-color: var(--uk-accent) transparent;
+}
+
+.bstreeview::-webkit-scrollbar,
+#logBox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.bstreeview::-webkit-scrollbar-track,
+#logBox::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.bstreeview::-webkit-scrollbar-thumb,
+#logBox::-webkit-scrollbar-thumb {
+    background: var(--uk-accent);
+    border-radius: 4px;
+}
+
+.bstreeview::-webkit-scrollbar-thumb:hover,
+#logBox::-webkit-scrollbar-thumb:hover {
+    background: var(--uk-secondary);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Responsive Improvements */
+@media (max-width: 576px) {
+    .nav-pills {
+        flex-direction: column;
+    }
+    
+    .nav-pills .nav-link {
+        margin: 2px 0;
+        text-align: center;
+    }
+    
+    .metric-card {
+        margin-bottom: 1rem;
+    }
+    
+    .row.g-4 > * {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Console/Terminal Styling */
+#logBox {
+    background: #0d1117 !important;
+    color: #58a6ff !important;
+    border: 1px solid #21262d !important;
+    font-family: 'SFMono-Regular', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace !important;
+}
+
+[data-bs-theme="dark"] #logBox {
+    background: #000000 !important;
+    color: #00ff41 !important;
+    border: 1px solid #333333 !important;
+}
+
+/* Switch Enhancement */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+    background: linear-gradient(135deg, var(--uk-accent), var(--uk-success));
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--uk-accent);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Hover Effects */
+.metric-card {
+    cursor: pointer;
+}
+
+.list-group-item-action:hover {
+    background-color: rgba(var(--uk-accent), 0.1) !important;
+}
+
+/* Typography Improvements */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+/* Badge Improvements */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.025em;
+}
+
+/* Card Header Gradients */
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, var(--uk-accent) 0%, #6366f1 100%) !important;
+    color: white !important;
+}
+
+/* Focus Improvements */
+*:focus {
+    outline: 2px solid var(--uk-accent);
+    outline-offset: 2px;
+}
+
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
